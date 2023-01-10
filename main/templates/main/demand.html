@@ -5,6 +5,30 @@
 {% block content %}
 <div class="features">
     <h1>Востребованность</h1>
+
+    <table cellpadding="4" cellspacing="2" style="background: #2c2c2c; /* Цвет фона таблицы */
+    color: white; /* Цвет текста */ width: 900px; /* Ширина таблицы */
+    margin: auto; ">
+    <tr>
+        <th style=" padding: 3px;
+    border: 1px solid black;">Год</th>
+        <th style=" padding: 3px;
+    border: 1px solid black;">Средняя зарплата в IT</th>
+        <th style=" padding: 3px;
+    border: 1px solid black;">Средняя зарплата в профессии Backend-разработчик</th>
+    </tr>
+        {% for el in table1 %}
+    <tr>
+        <td style=" padding: 3px;
+    border: 1px solid black;">{{ el.year }}</td>
+        <td style=" padding: 3px;
+    border: 1px solid black;">{{ el.avgSalary }}</td>
+        <td style=" padding: 3px;
+    border: 1px solid black;">{{ el.avgSalaryVac }}</td>
+    </tr>
+        {% endfor %}
+    </table>
+
     <p style="padding-top: 20px">График динамики уровня зарплат по годам</p>
     <img src="static/main/img/graph_1_1.jpg" alt="График 1" width="80%" height="80%" hspace="4" vspace="4" border="2">
     <p style="padding-top: 20px">Таблица динамики уровня зарплат по годам</p>
