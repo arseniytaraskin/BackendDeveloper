@@ -1,0 +1,40 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Последние вакансии {% endblock %}
+{% block footer %} Последние вакансии {% endblock %}
+{% block content %}
+<div class="features">
+<h1 style="text-align: center;"> Последние вакансии</h1>
+    <br>
+    <div style="max-width: 1000px; margin: 30px auto;">
+        {% for vacancy in vacancies %}
+            <div class="card">
+                <div class="card-header" style="background: #212121; max-width: 1000px;">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" style="text-decoration: none; color: white">
+                            <div class="text_block">
+                                <h6>{{ vacancy.name }}</h6>
+                                <p style="max-width: 1000px;"><b>Зарплата:</b> {{ vacancy.salary }}</p>
+                                <p><b>Навыки: </b>{{ vacancy.key_skills }}</p>
+                                <p><b>Компания: </b> {{ vacancy.employer }}</p>
+                                <p><b>Расположение:</b> {{ vacancy.address }}</p>
+                                <p><b>Дата публикации:</b> {{ vacancy.published_at }}</p>
+                                <a style="color: green" href={{ vacancy.url }}><strong>Ссылка на вакансию HH.ru</strong></a>
+                            </div>
+                        </button>
+                    </h5>
+                </div>
+            </div>
+            <br>
+        {% endfor %}
+    </div>
+    <p>
+    !
+    !
+    !
+</p>
+</div>
+
+
+
+{% endblock %}

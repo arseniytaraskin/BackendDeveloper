@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+
+from .utils import add_vacancies
 # Create your views here.
 
-from .models import TableSalaryVacancies, TableCountVacancies, TableGeoSalary, TableGeoVac, TableSkills
+from .models import TableSalaryVacancies, TableCountVacancies, TableGeoSalary, TableGeoVac, TableSkills, Vacancy
 def about(request):
     return render(request, "main/about.html", {'title':'Главная страница'})
 
@@ -19,3 +21,7 @@ def geography(request):
 def skills(request):
     table = TableSkills.objects.all().order_by('year')
     return render(request, "main/skills.html", {'table':table})
+
+def vacancies(request):
+    add_vacancies()
+    return render(request, "main/vacancies.html", context={'vacancies': Vacancy.objects.order_by('-published_at')[:10]})
