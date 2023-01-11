@@ -15,54 +15,14 @@
         <th style=" padding: 4px;
     border: 1px solid black;">Топ 10 навыков</th>
     </tr>
+       {% for elem in table %}
     <tr>
         <td style=" padding: 4px;
-    border: 1px solid black;">2015</td>
+    border: 1px solid black;">{{ elem.year }}</td>
         <td style=" padding: 4px;
-    border: 1px solid black;">PHP5, Git, Linux, HTML, Java, CSS, MySQL, ООП, 1-C, Redis</td>
+    border: 1px solid black;">{{ elem.skills }}</td>
     </tr>
-    <tr>
-        <td style=" padding: 4px;
-    border: 1px solid black;">2016</td>
-        <td style=" padding: 4px;
-    border: 1px solid black;">Java, Git, Linux, HTML, PHP5, CSS, JavaScript, ООП, PostgreSQL, Redis</td>
-    </tr>
-    <tr>
-        <td style=" padding: 4px;
-    border: 1px solid black;">2017</td>
-        <td style=" padding: 4px;
-    border: 1px solid black;">Java, Git, Linux, HTML, Java, CSS, MySQL, ООП, BootStrap, Ajax</td>
-    </tr>
-    <tr>
-        <td style=" padding: 4px;
-    border: 1px solid black;">2018</td>
-        <td style=" padding: 4px;
-    border: 1px solid black;">C#, Git, Linux, HTML, Java, CSS, jQuery, MS SQL, BootStrap, Ajax</td>
-    </tr>
-    <tr>
-        <td style=" padding: 4px;
-    border: 1px solid black;">2019</td>
-        <td style=" padding: 4px;
-    border: 1px solid black;">Go, Git, Linux, HTML, Java, CSS, SQLite, ООП, MySQL, noSQL</td>
-    </tr>
-    <tr>
-        <td style=" padding: 4px;
-    border: 1px solid black;">2020</td>
-        <td style=" padding: 4px;
-    border: 1px solid black;">Python, Git, Linux, HTML, Java, CSS, Django Framework, SQLite, Flask, MongoDB</td>
-    </tr>
-    <tr>
-        <td style=" padding: 4px;
-    border: 1px solid black;">2021</td>
-        <td style=" padding: 4px;
-    border: 1px solid black;">Java, Python, Git, Linux, HTML, Java, CSS, Django Framework, SQLite, Flask, MongoDB</td>
-    </tr>
-    <tr>
-        <td style=" padding: 4px;
-    border: 1px solid black;">2022</td>
-        <td style=" padding: 4px;
-    border: 1px solid black;">Python, Git, Linux, HTML, Java, CSS, Django Framework, SQLite, Flask, MongoDB</td>
-    </tr>
+       {% endfor %}
 </table>
  </div>
  {% endblock %}
