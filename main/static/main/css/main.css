@@ -12,26 +12,6 @@ footer h6{
     text-align: right;
 }
 
-header{
-position: absolute;
-}
-
-header img{
-    width: 80px;
-    height: 80px;
-    float: right;
-}
-
-header .logo{
-    font-size: 40px;
-    color: white;
-    float: right;
-    margin-right: 10px;
-    font-weight: bold;
-    position: relative;
-    bottom: -5px;
-}
-
 aside{
     position:fixed;
     float: left;

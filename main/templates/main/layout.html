@@ -19,18 +19,18 @@
         <a href ="/vacancies"><li>Последние вакансии</li></a>
     </ul>
 </aside>
-<header>
-    <img src="{% static 'main/img/main_logo.png' %}" alt="Логотип">
-    <span class="logo"> УРФУ название </span>
+<header_block>
+    <p style="float: right; color: #fff; padding: 20px; padding-top: 20px; font-size: 30px;">Название</p>
+    <img src="static/main/img/main_logo.png" alt="График скиллов" style="height: 80px; width: 80px; float: right;">
+</header_block>
 
-    <div class="name-footer">
+<main>
+        <div class="name-footer">
+
     {% block footer %}
 
     {% endblock %}
         </div>
-
-</header>
-<main>
     {% block content %}
 
 {% endblock %}
