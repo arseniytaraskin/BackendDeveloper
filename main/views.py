@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .utils import add_vacancies
+from .utils import add_vac
 # Create your views here.
 
 from .models import TableSalaryVacancies, TableCountVacancies, TableGeoSalary, TableGeoVac, TableSkills, Vacancy, MainPage, DemandPage, GeoPage, SkillsPage
@@ -27,5 +27,5 @@ def skills(request):
     return render(request, "main/skills.html", {'table':table, 'skillspage':skillspage})
 
 def vacancies(request):
-    add_vacancies()
+    add_vac()
     return render(request, "main/vacancies.html", context={'vacancies': Vacancy.objects.order_by('-published_at')[:10]})

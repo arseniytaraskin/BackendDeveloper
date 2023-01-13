@@ -3,7 +3,7 @@ from .models import Vacancy
 import requests
 
 
-def add_vacancies():
+def add_vac():
     set_vacancyModels(get_vacancies())
 
 
@@ -71,4 +71,4 @@ def get_vacancies():
 
 
 if __name__ == "__main__":
-    add_vacancies()
+    add_vac()
