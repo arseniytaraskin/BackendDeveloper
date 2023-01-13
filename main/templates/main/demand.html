@@ -4,10 +4,10 @@
 {% block footer %} Востребованность профессии {% endblock %}
 {% block content %}
 <div class="features">
-    <h1>Востребованность</h1>
-    <p style="padding-top: 20px">График динамики уровня зарплат по годам</p>
-    <img src="static/main/img/graph_1_1.jpg" alt="График 1" width="80%" height="80%" hspace="4" vspace="4" border="2">
-    <p style="padding-top: 20px">Таблица динамики уровня зарплат по годам</p>
+    <h1>{{ demandpage.title }}</h1>
+    <p style="padding-top: 20px">{{ demandpage.text1 }}</p>
+    <img src="{{ demandpage.image1 }}" alt="График 1" width="80%" height="80%" hspace="4" vspace="4" border="2">
+    <p style="padding-top: 20px">{{ demandpage.text2 }}</p>
     <table cellpadding="4" cellspacing="2" style="background: #2c2c2c; /* Цвет фона таблицы */
     color: white; /* Цвет текста */ width: 900px; /* Ширина таблицы */
     margin: auto; ">
@@ -30,9 +30,9 @@
     </tr>
         {% endfor %}
     </table>
-    <p style="padding-top: 20px">График динамики количества вакансий по годам</p>
-    <img src="static/main/img/graph_2_1.jpg" alt="График 2" width="80%" height="80%" hspace="4" vspace="4" border="2">
-    <p style="padding-top: 20px">Таблица динамики количества вакансий по годам</p>
+    <p style="padding-top: 20px">{{ demandpage.text3 }}</p>
+    <img src="{{ demandpage.image2 }}" alt="График 2" width="80%" height="80%" hspace="4" vspace="4" border="2">
+    <p style="padding-top: 20px">{{ demandpage.text4 }}</p>
     <table cellpadding="4" cellspacing="2" style="background: #2c2c2c; /* Цвет фона таблицы */
     color: white; /* Цвет текста */ width: 900px; /* Ширина таблицы */
     margin: auto; ">

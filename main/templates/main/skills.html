@@ -4,10 +4,10 @@
 {% block footer %} Навыки {% endblock %}
 {% block content %}
  <div class="features">
- <h1>Навыки</h1>
-     <p style="padding-top: 20px">График ТОП-10 навыков по годам для Backend-разработчика.</p>
-    <img src="static/main/img/skills.jpg" alt="График скиллов" width="80%" height="80%" hspace="4" vspace="4" border="2">
-    <p style="padding-top: 20px">ТОП-10 навыков по годам для Backend-разработчика.</p>
+ <h1>{{ skillspage.title }}</h1>
+     <p style="padding-top: 20px">{{ skillspage.text1 }}</p>
+    <img src="{{ skillspage.image1 }}" alt="График скиллов" width="80%" height="80%" hspace="4" vspace="4" border="2">
+    <p style="padding-top: 20px">{{ skillspage.text2 }}</p>
    <table cellpadding="4" cellspacing="2" style="background: #2c2c2c; /* Цвет фона таблицы */
     color: white; /* Цвет текста */ width: 900px; /* Ширина таблицы */
     margin: auto; ">

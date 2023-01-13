@@ -97,3 +97,52 @@ class Vacancy(models.Model):
     class Meta:
         verbose_name = 'Вакансии hh.ru'
         verbose_name_plural = 'Вакансии hh.ru'
+
+class MainPage(models.Model):
+    title = models.CharField('Заголовок', max_length=100, default='Главная страница')
+    text = models.TextField('Текст', default=None)
+    image = models.CharField('Ссылка на картинку', max_length=1000, default='static/main/img/developer.png')
+    class Meta:
+        verbose_name = 'Главная страница'
+        verbose_name_plural = 'Главная страница'
+
+class DemandPage(models.Model):
+    title = models.CharField('Заголовок', max_length=100, default='Востребованность')
+
+    text1 = models.TextField('Текст1', default=None)
+    text2 = models.TextField('Текст2', default=None)
+    text3 = models.TextField('Текст3', default=None)
+    text4 = models.TextField('Текст4', default=None)
+
+    image1 = models.CharField('Ссылка на картинку1', max_length=1000, default='static/main/img/developer.png')
+    image2 = models.CharField('Ссылка на картинку2', max_length=1000, default='static/main/img/developer.png')
+    class Meta:
+        verbose_name = 'Страница востребованность'
+        verbose_name_plural = 'Страница востребованность'
+
+class GeoPage(models.Model):
+    title = models.CharField('Заголовок', max_length=100, default='География')
+
+    text1 = models.TextField('Текст1', default=None)
+    text2 = models.TextField('Текст2', default=None)
+    text3 = models.TextField('Текст3', default=None)
+    text4 = models.TextField('Текст4', default=None)
+
+    image1 = models.CharField('Ссылка на картинку1', max_length=1000, default='static/main/img/developer.png')
+    image2 = models.CharField('Ссылка на картинку2', max_length=1000, default='static/main/img/developer.png')
+    class Meta:
+        verbose_name = 'Страница география'
+        verbose_name_plural = 'Страница география'
+
+class SkillsPage(models.Model):
+    title = models.CharField('Заголовок', max_length=100, default='Навыки')
+
+    text1 = models.TextField('Текст1', default=None)
+    text2 = models.TextField('Текст2', default=None)
+
+
+    image1 = models.CharField('Ссылка на картинку1', max_length=1000, default='static/main/img/developer.png')
+
+    class Meta:
+        verbose_name = 'Страница навыки'
+        verbose_name_plural = 'Страница навыки'
