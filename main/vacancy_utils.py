@@ -4,27 +4,27 @@ import requests
 
 
 def add_vac():
-    set_vacancyModels(get_vacancies())
+    set_vacancy(get_vac())
 
 
-def set_vacancyModels(vacancies):
-    models_hh_id = [item.hh_id for item in Vacancy.objects.all()]
-    for vacancy in vacancies:
-        if vacancy['id'] not in models_hh_id:
+def set_vacancy(vacancies):
+    hh_model = [item.hh_id for item in Vacancy.objects.all()]
+    for v in vacancies:
+        if v['id'] not in hh_model:
             model = Vacancy(
-                hh_id=vacancy['id'],
-                name=vacancy['name'],
-                published_at=vacancy['published_at'],
-                description=vacancy['description'],
-                key_skills=vacancy['key_skills'],
-                address=vacancy['area'] if vacancy['address'] is None else vacancy['address']['city'],
-                url=vacancy['alternate_url'],
-                employer=vacancy['employer']['name'],
-                salary=vacancy['salary'], )
+                hh_id=v['id'],
+                name=v['name'],
+                published_at=v['published_at'],
+                description=v['description'],
+                key_skills=v['key_skills'],
+                address=v['area'] if v['address'] is None else v['address']['city'],
+                url=v['alternate_url'],
+                employer=v['employer']['name'],
+                salary=v['salary'], )
             model.save()
 
 
-def clean_vacancy(vacancy):
+def clean_vac(vacancy):
     vacancy['area'] = vacancy['area']['name'] if vacancy['area'].__contains__('name') else 'Нет данных'
     if vacancy['salary']['from'] != None and vacancy['salary']['to'] != None and vacancy['salary']['from'] != \
             vacancy['salary']['to']:
@@ -52,7 +52,7 @@ def get_api():
     return requests.get('https://api.hh.ru/vacancies', params).json()
 
 
-def get_vacancies():
+def get_vac():
     try:
         data = []
         info = get_api()
@@ -62,7 +62,7 @@ def get_vacancies():
         data = sorted(data, key=lambda x: x['published_at'])
         vacancies = []
         for vacancy in data[len(data) - 10:]:
-            vacancies.append(clean_vacancy(requests.get(f'https://api.hh.ru/vacancies/{vacancy["id"]}').json()))
+            vacancies.append(clean_vac(requests.get(f'https://api.hh.ru/vacancies/{vacancy["id"]}').json()))
         return vacancies
     except Exception as e:
         print(e)

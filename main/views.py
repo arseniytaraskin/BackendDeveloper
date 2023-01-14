@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .utils import add_vac
+from .vacancy_utils import add_vac
 # Create your views here.
 
 from .models import TableSalaryVacancies, TableCountVacancies, TableGeoSalary, TableGeoVac, TableSkills, Vacancy, MainPage, DemandPage, GeoPage, SkillsPage
