@@ -17,7 +17,7 @@ aside{
     float: left;
     background: #181818;
     width: 20%;
-    padding: 5%;
+    padding: 3%;
     height: 100vh;
     color: #fff;
     border-right: 5px solid #4d4d4d;
@@ -25,7 +25,7 @@ aside{
 
 aside h3{
     margin-top: -30px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 32px;
     float: left;
 }
@@ -37,7 +37,7 @@ aside ul{
 aside ul li{
     color: #fff;
     display: block;
-    margin-top: 20px;
+    margin-top: 10px;
 
     transition: transform .3s ease;
 }
